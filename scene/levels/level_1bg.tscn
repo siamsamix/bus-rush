@@ -22,7 +22,7 @@ scale = Vector2(0.4359774, 0.43675596)
 texture = ExtResource("1_6vqyv")
 
 [node name="distant_skyline" type="ParallaxLayer" parent="." unique_id=972937070]
-motion_scale = Vector2(0.4, 0.4)
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1592, 0)
 
 [node name="Skyline" type="Sprite2D" parent="distant_skyline" unique_id=1181029522]
@@ -36,7 +36,7 @@ scale = Vector2(0.25148803, 0.2514881)
 texture = ExtResource("2_e0qt5")
 
 [node name="apartment_layer" type="ParallaxLayer" parent="." unique_id=1311676450]
-motion_scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.8, 0.9)
 motion_mirroring = Vector2(1968, 0)
 
 [node name="Apartment1" type="Sprite2D" parent="apartment_layer" unique_id=761255790]
@@ -53,10 +53,6 @@ texture = ExtResource("3_210ry")
 position = Vector2(1640.0001, 457)
 scale = Vector2(0.20684527, 0.20684524)
 texture = ExtResource("3_210ry")
-
-[node name="urban_chaos_layer" type="ParallaxLayer" parent="." unique_id=766838297]
-
-[node name="traffic_infrastructure" type="ParallaxLayer" parent="." unique_id=1555840470]
 
 [node name="foreground_urban_detail" type="ParallaxLayer" parent="." unique_id=543044013]
 motion_mirroring = Vector2(1452, 0)

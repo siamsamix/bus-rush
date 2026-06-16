@@ -8,16 +8,16 @@
 [node name="level2_bg" type="ParallaxBackground" unique_id=828611422]
 
 [node name="sky" type="ParallaxLayer" parent="." unique_id=781734984]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.1, 0)
 motion_mirroring = Vector2(2634, 0)
 
 [node name="Sky" type="Sprite2D" parent="sky" unique_id=843669004]
-position = Vector2(658.8235, 280)
+position = Vector2(658.8235, 229)
 scale = Vector2(0.41592392, 0.41666666)
 texture = ExtResource("1_yvtmh")
 
 [node name="Sky2" type="Sprite2D" parent="sky" unique_id=1761135117]
-position = Vector2(1976, 280)
+position = Vector2(1976.0001, 229)
 scale = Vector2(0.41592392, 0.41666666)
 texture = ExtResource("1_yvtmh")
 
@@ -41,7 +41,7 @@ scale = Vector2(0.24210538, 0.2440476)
 texture = ExtResource("2_t5faw")
 
 [node name="distant_bg" type="ParallaxLayer" parent="." unique_id=683781597]
-motion_scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.8, 0.9)
 motion_mirroring = Vector2(1984, 0)
 
 [node name="Level2DistantBg" type="Sprite2D" parent="distant_bg" unique_id=496047283]

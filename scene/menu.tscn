@@ -1,46 +1,63 @@
 [gd_scene format=3 uid="uid://b2hwgq3vvcoxc"]
 
 [ext_resource type="Script" uid="uid://42csfuqeq4mk" path="res://scene/menu.gd" id="1_e5g8k"]
-[ext_resource type="PackedScene" uid="uid://b0tx5e8lnc2oo" path="res://scene/bg.tscn" id="2_8hxod"]
+[ext_resource type="Texture2D" uid="uid://glf6qjpu63if" path="res://scene/background/BG.png" id="2_8hxod"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e5g8k"]
 
 [node name="menu" type="Node2D" unique_id=1705793671]
 script = ExtResource("1_e5g8k")
 
-[node name="level1" type="Button" parent="." unique_id=181233976]
-offset_left = -32.0
-offset_top = -56.0
-offset_right = 30.0
-offset_bottom = -25.0
-text = "Level 1"
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1514161610]
 
-[node name="level2" type="Button" parent="." unique_id=1079540418]
-offset_left = -32.0
-offset_top = -16.0
-offset_right = 30.0
-offset_bottom = 15.0
-text = "Level 2"
-
-[node name="level3" type="Button" parent="." unique_id=1131866909]
-offset_left = -32.0
-offset_top = 24.0
-offset_right = 30.0
-offset_bottom = 55.0
-text = "Level 3"
-
-[node name="return" type="Button" parent="." unique_id=1886412982]
-offset_left = -240.0
-offset_top = -128.0
-offset_right = -180.0
-offset_bottom = -104.0
-text = "return"
-icon = SubResource("ViewportTexture_e5g8k")
+[node name="Bg" type="Sprite2D" parent="." unique_id=1684280147]
+position = Vector2(256, 144)
+scale = Vector2(0.21878718, 0.2187872)
+texture = ExtResource("2_8hxod")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=888649988]
+position = Vector2(256, 144)
 zoom = Vector2(2, 2)
 
-[node name="BG" parent="." unique_id=1649111644 instance=ExtResource("2_8hxod")]
+[node name="level1" type="Button" parent="." unique_id=181233976]
+anchors_preset = -1
+anchor_right = 0.001953125
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 286.0
+offset_bottom = 111.0
+text = "Level 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="level2" type="Button" parent="." unique_id=1079540418]
+anchors_preset = -1
+anchor_right = 0.001953125
+offset_left = 224.0
+offset_top = 128.0
+offset_right = 286.0
+offset_bottom = 159.0
+text = "Level 2"
+metadata/_edit_use_anchors_ = true
+
+[node name="level3" type="Button" parent="." unique_id=1131866909]
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_right = 0.73595315
+anchor_bottom = 0.708
+offset_left = 224.0
+offset_top = 176.0
+offset_right = 284.0
+offset_bottom = 200.0
+text = "Level 3"
+metadata/_edit_use_anchors_ = true
+
+[node name="return" type="Button" parent="." unique_id=1886412982]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 76.0
+offset_bottom = 48.0
+text = "return"
+icon = SubResource("ViewportTexture_e5g8k")
 
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
