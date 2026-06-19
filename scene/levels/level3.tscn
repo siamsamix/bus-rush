@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://duj86no0iv114" path="res://scene/levels/level_3.gd" id="1_npllw"]
 [ext_resource type="Texture2D" uid="uid://ml5slk47ldb1" path="res://spritesheet/assets/kenney-didnt-use/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap.png" id="1_nt6i2"]
 [ext_resource type="Texture2D" uid="uid://c7y0vpuv0cqlq" path="res://spritesheet/assets/rock.png" id="2_i1b1j"]
-[ext_resource type="PackedScene" uid="uid://ds3sm100gxyeu" path="res://scene/characters/player.tscn" id="2_nt6i2"]
+[ext_resource type="PackedScene" uid="uid://ds3sm100gxyeu" path="res://scene/characters/char_3.tscn" id="2_nt6i2"]
 [ext_resource type="PackedScene" uid="uid://bhxf15fe864v5" path="res://scene/levels/level_3bg.tscn" id="3_7q5m8"]
 [ext_resource type="PackedScene" uid="uid://cbqtct1jw3len" path="res://scene/game_over.tscn" id="5_pqnrn"]
 
@@ -344,22 +344,23 @@ position = Vector2(48, 504)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=614974380]
 position = Vector2(136, -136)
 zoom = Vector2(1.2, 1.2)
+limit_left = -245
+
+[node name="time_left" type="Label" parent="CharacterBody2D" unique_id=945602937]
+offset_left = 385.0
+offset_top = -330.0
+offset_right = 509.72974
+offset_bottom = -310.0
+
+[node name="health" type="Label" parent="CharacterBody2D" unique_id=1328507264]
+offset_left = -244.0
+offset_top = -335.0
+offset_right = -129.0
+offset_bottom = -312.0
 
 [node name="game-over" parent="CharacterBody2D" unique_id=691742413 instance=ExtResource("5_pqnrn")]
 process_mode = 3
 visible = false
-
-[node name="time_left" type="Label" parent="CharacterBody2D" unique_id=945602937]
-offset_left = 408.0
-offset_top = -360.0
-offset_right = 532.72974
-offset_bottom = -340.0
-
-[node name="health" type="Label" parent="CharacterBody2D" unique_id=1328507264]
-offset_left = 85.0
-offset_top = -362.0
-offset_right = 200.0
-offset_bottom = -339.0
 
 [node name="level3_bg" parent="." unique_id=482342009 instance=ExtResource("3_7q5m8")]
 
