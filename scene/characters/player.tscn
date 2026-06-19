@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ds3sm100gxyeu"]
 
-[ext_resource type="Texture2D" uid="uid://dlns2sfiabnqh" path="res://spritesheet/character/char1/emote.png" id="1_ef3r4"]
+[ext_resource type="Texture2D" uid="uid://dlns2sfiabnqh" path="res://spritesheet/character/char3/emote.png" id="1_ef3r4"]
 [ext_resource type="Script" uid="uid://bjoaeu74mtl58" path="res://scene/characters/player.gd" id="1_ovwpv"]
-[ext_resource type="Texture2D" uid="uid://b0y3b42i1xdw5" path="res://spritesheet/character/char1/hurt.png" id="2_ovwpv"]
-[ext_resource type="Texture2D" uid="uid://bbvj0iv1b0l07" path="res://spritesheet/character/char1/idle.png" id="3_3o68y"]
-[ext_resource type="Texture2D" uid="uid://2c8xm1afyoym" path="res://spritesheet/character/char1/jump.png" id="4_3kvqf"]
-[ext_resource type="Texture2D" uid="uid://b2extfvqrlwp5" path="res://spritesheet/character/char1/run.png" id="5_qeppk"]
-[ext_resource type="Texture2D" uid="uid://dbnaknvkciuf7" path="res://spritesheet/character/char1/walk.png" id="6_8jjb6"]
-[ext_resource type="Texture2D" uid="uid://bjp7ijtjpwhbn" path="res://spritesheet/character/char1/sit.png" id="7_3o68y"]
+[ext_resource type="Texture2D" uid="uid://b0y3b42i1xdw5" path="res://spritesheet/character/char3/hurt.png" id="2_ovwpv"]
+[ext_resource type="Texture2D" uid="uid://bbvj0iv1b0l07" path="res://spritesheet/character/char3/idle.png" id="3_3o68y"]
+[ext_resource type="Texture2D" uid="uid://2c8xm1afyoym" path="res://spritesheet/character/char3/jump.png" id="4_3kvqf"]
+[ext_resource type="Texture2D" uid="uid://b2extfvqrlwp5" path="res://spritesheet/character/char3/run.png" id="5_qeppk"]
+[ext_resource type="Texture2D" uid="uid://dbnaknvkciuf7" path="res://spritesheet/character/char3/walk.png" id="6_8jjb6"]
+[ext_resource type="Texture2D" uid="uid://bjp7ijtjpwhbn" path="res://spritesheet/character/char3/sit.png" id="7_3o68y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpm6q"]
 atlas = ExtResource("1_ef3r4")
@@ -190,7 +190,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hurt",
-"speed": 8.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -317,6 +317,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+
+[sub_resource type="Animation" id="Animation_vfqvn"]
+resource_name = "dead"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="Animation" id="Animation_hleiu"]
 resource_name = "fall"
@@ -439,6 +479,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6x0pm"]
 _data = {
 &"RESET": SubResource("Animation_vpm6q"),
+&"dead": SubResource("Animation_vfqvn"),
 &"fall": SubResource("Animation_hleiu"),
 &"idle": SubResource("Animation_38e5b"),
 &"jump": SubResource("Animation_yacac"),
@@ -625,7 +666,7 @@ script = ExtResource("1_ovwpv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=277070137]
 scale = Vector2(1.125, 1.125)
 sprite_frames = SubResource("SpriteFrames_2u8p4")
-animation = &"slide"
+animation = &"hurt"
 autoplay = "idle"
 frame = 1
 
