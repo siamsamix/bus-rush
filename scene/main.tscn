@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://glf6qjpu63if" path="res://scene/background/BG.png" id="2_brvut"]
 [ext_resource type="PackedScene" uid="uid://b0tx5e8lnc2oo" path="res://scene/bg.tscn" id="2_v0l8b"]
 [ext_resource type="Texture2D" uid="uid://do2ibj2ifmahw" path="res://scene/logo.png" id="3_wp4xf"]
+[ext_resource type="AudioStream" uid="uid://cvmlq4bnpw77y" path="res://AudioFiles/StartMenu1.mp3" id="5_0ha60"]
 
 [node name="main" type="Node2D" unique_id=1410822908]
 script = ExtResource("1_itxqv")
@@ -40,6 +41,10 @@ offset_right = 480.0
 offset_bottom = 312.0
 text = "Quit"
 icon_alignment = 1
+
+[node name="StartMenu1" type="AudioStreamPlayer" parent="." unique_id=32290180]
+stream = ExtResource("5_0ha60")
+autoplay = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbqtct1jw3len"]
 
 [ext_resource type="Script" uid="uid://dh3227r1di6c3" path="res://scene/game_over.gd" id="1_8uq5u"]
+[ext_resource type="AudioStream" uid="uid://bsudkdtwsmxqq" path="res://AudioFiles/GameOver.mp3" id="2_mxr41"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bx6u7"]
 font_size = 160
@@ -53,6 +54,10 @@ text = "Restart"
 [node name="quit" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=8316990]
 layout_mode = 2
 text = "Quit"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=1643140864]
+stream = ExtResource("2_mxr41")
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer2/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer2/VBoxContainer/quit" to="." method="_on_quit_pressed"]
