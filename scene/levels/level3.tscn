@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c7y0vpuv0cqlq" path="res://spritesheet/assets/rock.png" id="2_i1b1j"]
 [ext_resource type="PackedScene" uid="uid://ds3sm100gxyeu" path="res://scene/characters/char_3.tscn" id="2_nt6i2"]
 [ext_resource type="PackedScene" uid="uid://bhxf15fe864v5" path="res://scene/levels/level_3bg.tscn" id="3_7q5m8"]
-[ext_resource type="FontFile" uid="uid://b74g2phvgwpib" path="res://fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf" id="5_j5fa3"]
+[ext_resource type="Script" uid="uid://bo2ywxpxsipr3" path="res://scene/levels/camera_2d.gd" id="5_hq8j1"]
 [ext_resource type="PackedScene" uid="uid://cbqtct1jw3len" path="res://scene/game_over.tscn" id="5_pqnrn"]
 [ext_resource type="PackedScene" uid="uid://bkwc8j0k6cuxx" path="res://scene/pause_menu.tscn" id="6_j5fa3"]
 [ext_resource type="PackedScene" uid="uid://ci05opx7gj0q2" path="res://scene/level_finished_screen.tscn" id="8_cc7lp"]
@@ -325,9 +325,6 @@ texture_region_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pqnrn")
 
-[sub_resource type="LabelSettings" id="LabelSettings_gfkks"]
-font = ExtResource("5_j5fa3")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqnrn"]
 size = Vector2(7902, 86)
 
@@ -427,27 +424,24 @@ tile_set = SubResource("TileSet_j5fa3")
 
 [node name="CharacterBody2D" parent="." unique_id=910088007 instance=ExtResource("2_nt6i2")]
 position = Vector2(48, 504)
-last_checkpoint = null
-life = null
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=614974380]
-position = Vector2(136, -136)
-zoom = Vector2(1.2, 1.2)
+position = Vector2(288, -140)
+scale = Vector2(1.2, 1.2)
 limit_left = -245
+script = ExtResource("5_hq8j1")
 
-[node name="time_left" type="Label" parent="CharacterBody2D" unique_id=945602937]
-offset_left = 385.0
-offset_top = -330.0
-offset_right = 509.72974
-offset_bottom = -310.0
+[node name="health" type="Label" parent="CharacterBody2D/Camera2D" unique_id=1328507264]
+offset_left = -383.3333
+offset_top = -215.83331
+offset_right = -268.3333
+offset_bottom = -192.83331
 
-[node name="health" type="Label" parent="CharacterBody2D" unique_id=1328507264]
-offset_left = -244.0
-offset_top = -335.0
-offset_right = -129.0
-offset_bottom = -312.0
-theme_override_fonts/font = ExtResource("5_j5fa3")
-label_settings = SubResource("LabelSettings_gfkks")
+[node name="time_left" type="Label" parent="CharacterBody2D/Camera2D" unique_id=945602937]
+offset_left = 245.83331
+offset_top = -219.16664
+offset_right = 370.56305
+offset_bottom = -199.16664
 
 [node name="game-over" parent="CharacterBody2D" unique_id=691742413 instance=ExtResource("5_pqnrn")]
 visible = false
@@ -468,7 +462,7 @@ position = Vector2(2245, 577)
 shape = SubResource("RectangleShape2D_pqnrn")
 
 [node name="Timer" type="Timer" parent="." unique_id=1065488031]
-wait_time = 100.0
+wait_time = 40.0
 one_shot = true
 
 [node name="level_finished" type="Area2D" parent="." unique_id=1283272934]
