@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="anik"
+config/name="SrabonSyndicate"
 run/main_scene="uid://djpbqsrvs4j8w"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://do2ibj2ifmahw"
+config/icon="uid://do2ibj2ifmahw"
 
 [display]
 
